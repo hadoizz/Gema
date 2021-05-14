@@ -6,8 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>All Games</title>
     <?= $style ?>
-    <?php echo $groceryCRUD ?>
-
+    <?= $groceryCRUD ?>
 </head>
 <body>
     <h1>CRUD Games</h1>
