@@ -21,5 +21,11 @@ class Base extends CI_Controller{
         $data['style'] = $this->load->view('include/ui',NULL,TRUE);
         $this->load->view('pages/home',$data);
     }
+    
+    public function games(){
+        $data['style'] = $this->load->view('include/ui', NULL, TRUE);
+        $data['card'] = $this->load->view('components/card',NULL, TRUE);
+        $this->load->view('pages/games',$data);
+    }
 }
 ?>
