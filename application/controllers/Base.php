@@ -5,6 +5,7 @@ class Base extends CI_Controller{
     public function __construct(){
 		parent::__construct();
         session_start();
+        $this->load->model('games');
 	}
     
     public function index(){
@@ -23,8 +24,9 @@ class Base extends CI_Controller{
     }
     
     public function games(){
+        $games['games'] = $this->games->getGames();
         $data['style'] = $this->load->view('include/ui', NULL, TRUE);
-        $data['card'] = $this->load->view('components/card',NULL, TRUE);
+        $data['card'] = $this->load->view('components/card',$games, TRUE);
         $this->load->view('pages/games',$data);
     }
 }

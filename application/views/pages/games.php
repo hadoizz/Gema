@@ -7,18 +7,22 @@
     <title>Store</title>
     <?= $style ?>
     <style>
-        #poster{ transition: 0.3s; box-shadow: 5px 10px;}
-        #poster:hover{ transform: scale(1.02); }
+        #poster{
+            transition: 0.3s;
+            box-shadow: 5px 10px;
+        }
+        #poster:hover{ 
+            transform: scale(1.02);
+            box-shadow: 5px 10px;
+        }
     </style>
 </head>
 <body style="background-color: #1F143D;">
 <br><br>
     <div class="ui container">
-        <div class="ui grid">
+        <div class="ui center aligned grid">
         <?php 
-            for($i=0; $i<20; $i++){ 
-                echo $card; 
-            }
+            echo $card; 
         ?>
         </div>
     </div>
