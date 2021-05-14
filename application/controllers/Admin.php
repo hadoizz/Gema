@@ -32,9 +32,9 @@ class Admin extends CI_Controller{
 
         $output = $crud->render();
         $data['crud'] = get_object_vars($output);
+        $data['groceryCRUD'] = $this->load->view('include/grocerycrud', $data, TRUE);
 
         $data['style'] = $this->load->view('include/ui',NULL,TRUE);
-        $data['groceryCRUD'] = $this->load->view('include/grocerycrud', $data, TRUE);
         $this->load->view('admin/item', $data);
     }
 
