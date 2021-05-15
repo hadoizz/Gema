@@ -19,14 +19,16 @@ class Base extends CI_Controller{
     }
 
     public function home(){
+        $data['nav'] = $this->load->view('components/nav',NULL, TRUE);
         $data['style'] = $this->load->view('include/ui',NULL,TRUE);
         $this->load->view('pages/home',$data);
     }
     
     public function games(){
         $games['games'] = $this->games->getGames();
+        $data['nav'] = $this->load->view('components/nav',NULL, TRUE);
         $data['style'] = $this->load->view('include/ui', NULL, TRUE);
-        $data['card'] = $this->load->view('components/card',$games, TRUE);
+        $data['showGames'] = $this->load->view('components/showGames',$games, TRUE);
         $this->load->view('pages/games',$data);
     }
 }
