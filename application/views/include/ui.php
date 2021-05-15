@@ -10,10 +10,10 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script> -->
 <style>
     body{
-        background-color: #1F143D;
+        background-color: #393e46;
     }
     #navigation{
-        background-color: #1F143D; 
+        background-color: #393e46; 
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); 
         padding:20px;
         overflow: hidden;
