@@ -17,7 +17,7 @@
             </div>
             <div class="extra content">
                 <div class="right floated author">
-                    <a href="" class="ui green icon button"><i class="ellipsis horizontal icon"></i></a>
+                    <a href="<?= base_url('index.php/base/details/'.$item['Id']) ?>" class="ui green icon button"><i class="ellipsis horizontal icon"></i></a>
                     <a href="" class="ui teal icon button"><i class="cart plus icon"></i></a>
                 </div>
             </div>
