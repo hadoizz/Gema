@@ -16,8 +16,23 @@
             <a class="item">XBOX</a>
             
             <div class="right menu">
-                <a class="item">Login</a>
                 <a class="item">About Us</a>
+                <div class="ui icon top right pointing dropdown item"><i class="user icon"></i>
+                    <div class="menu">
+                        <?php if(!isset($_SESSION['user'])){ ?>    
+                            <div class="item" >
+                                <a href="#" style="color: black;">Login</a>
+                            </div>
+                        <?php }else{ ?>
+                            <div class="item" >
+                                <a href="#" style="color: black;">Order history</a>
+                            </div>
+                            <div class="item" >
+                                <a href="#" style="color: black;">Logout</a>
+                            </div>
+                        <?php }?>
+                    </div>
+                </div>
             </div>
         </div>
         <!--End: Desktop Nav-->
@@ -43,8 +58,8 @@
                 <a class="item">PS4</a>
                 <a class="item">PS5</a>
                 <a class="item">XBOX</a>
-                <a class="item">Login</a>
                 <a class="item">About Us</a>
+                <a class="item">Login</a>
             </div>
             <!--End: Mobile Nav-->
         </div>
@@ -54,6 +69,7 @@
 <script>
     $(document).ready(function() {
         $('.ui.vertical.menu').toggle("close");
+        $('.ui.dropdown').dropdown();
         $('.ui.toggle.button').click(function() {
             $('.ui.vertical.menu').toggle("250", "linear")
         });
