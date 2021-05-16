@@ -38,19 +38,35 @@
         <!--End: Desktop Nav-->
         
         <!--Start: Mobile Nav-->
-        <div class="mobile only row" >
+        <div class="mobile only column row" >
+            <div class="left menu">
+                <a class="menu item">
+                    <div class="ui secondary icon toggle button">
+                        <i class="content icon"></i>
+                    </div>
+                </a>
+            </div>
             <a class="header item" href="<?= base_url() ?>">
                 <div class="ui image" style="width: 110px;">
                     <img src="<?= base_url('/assets/img/logo1.png') ?>">
                 </div>
             </a>
-            <div class="right menu">
-                <a class="menu item">
-                    <div class="ui teal icon toggle button">
-                        <i class="content icon"></i>
+            <div class="ui icon top right pointing dropdown item"><i class="user icon"></i>
+                    <div class="menu">
+                        <?php if(!isset($_SESSION['user'])){ ?>    
+                            <div class="item" >
+                                <a href="#" style="color: black;">Login</a>
+                            </div>
+                        <?php }else{ ?>
+                            <div class="item" >
+                                <a href="#" style="color: black;">Order history</a>
+                            </div>
+                            <div class="item" >
+                                <a href="#" style="color: black;">Logout</a>
+                            </div>
+                        <?php }?>
                     </div>
-                </a>
-            </div>
+                </div>
             <div class="ui vertical accordion borderless fluid menu" style="background-color: #393e46;">
                 <a class="item">PC</a>
                 <a class="item">PS2</a>
@@ -59,7 +75,6 @@
                 <a class="item">PS5</a>
                 <a class="item">XBOX</a>
                 <a class="item">About Us</a>
-                <a class="item">Login</a>
             </div>
             <!--End: Mobile Nav-->
         </div>
