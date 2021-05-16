@@ -12,6 +12,8 @@ class Base extends CI_Controller{
         if(isset($_SESSION['role'])){
             if($_SESSION['role'] == 'admin'){
                 redirect(base_url("index.php/admin"));
+            } else {
+                $this->home();
             }
         }else{
             $this->home();
