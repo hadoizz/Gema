@@ -29,5 +29,10 @@ class Login extends CI_Controller{
             redirect(base_url('index.php/Login?login=false'));
         }
     }
+
+    public function logOut(){
+        session_destroy();
+        redirect(base_url());
+    }
 }
 ?>

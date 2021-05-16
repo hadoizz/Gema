@@ -11,6 +11,7 @@
 </head>
 <body>
     <h1>CRUD Games</h1>
+    <a class="ui button" href="<?= base_url('index.php/login/logOut') ?>">Log Out</a>
     <?php echo $crud['output']; ?>
 </body>
 </html>

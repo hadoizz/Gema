@@ -43,5 +43,9 @@ class Base extends CI_Controller{
         $data['recommend'] = $this->games->getRandomGames();
         $this->load->view('pages/details',$data);
     }
+
+    public function errorPage(){
+        $this->load->view('errors/index.html');
+    }
 }
 ?>

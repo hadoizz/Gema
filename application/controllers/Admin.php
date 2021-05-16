@@ -7,16 +7,26 @@ class Admin extends CI_Controller{
         session_start();
         $this->load->library('grocery_CRUD');
         $this->load->model('games');
-	}
 
-    public function index(){
         if(isset($_SESSION['role'])){
             if($_SESSION['role'] == 'admin'){
                 $this->crudItem();
+            } else {
+                redirect(base_url('index.php/base/errorPage'));
             }
         }else{
-            $this->load->view('errors/index.html');
+            redirect(base_url('index.php/base/errorPage'));
         }
+	}
+
+    public function index(){
+        // if(isset($_SESSION['role'])){
+            // if($_SESSION['role'] == 'admin'){
+                //$this->crudItem();
+            // }
+        // }else{
+            // $this->load->view('errors/index.html');
+        // }
     }
 
     public function crudItem(){
