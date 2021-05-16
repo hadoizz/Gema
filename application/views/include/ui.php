@@ -19,7 +19,7 @@
         width: 100%;
     }
     #main{
-        padding-top: 6rem;
+        padding-top: 8rem;
         color: white;
     }
 </style>
