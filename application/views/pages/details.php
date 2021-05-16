@@ -38,7 +38,7 @@
                                     <h1 style="font-weight: normal;">IDR <?= number_format($game[0]['Harga'])?></h1>
                                 </div>
                                 <div class="five wide column">
-                                    <a href="" class="ui right labeled secondary icon button"><i class="cart plus icon"></i>Add to Cart</a>
+                                    <a href="#" class="ui right labeled green icon button"><i class="cart plus icon"></i>Add to Cart</a>
                                 </div>
                             </div>
                         </div>
@@ -47,11 +47,13 @@
             </div>
         </div>
         
-
-        <h2 class="center aligned">Recommended Games</h2>
+        <br><br>
+        <div class="ui container center aligned">
+            <h2 class="">You may also like</h2>
+        </div>
         <div class="ui center aligned grid">
                 <?php foreach($recommend as $item) {?>
-                <div class="eight wide mobile five wide tablet four wide computer stackable column left aligned">
+                <div class="eight wide mobile four wide tablet four wide computer stackable column left aligned">
                     <br>
                     <div class="row">
                         <div class="ui fluid teal card" style="background-color: #222831; box-shadow: none;">
