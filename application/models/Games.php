@@ -22,5 +22,15 @@ class Games extends CI_Model{
         $query = $this->db->query("SELECT * FROM barang WHERE Id = '$id'");
         return $query->result_array();
     }
+
+    public function getKategori($id){
+        $query = $this->db->query("SELECT * FROM kategori WHERE Id = '$id'");
+        return $query->result_array();
+    }
+
+    public function getRandomGames(){
+        $query = $this->db->query("SELECT * FROM barang ORDER BY RAND() LIMIT 3");
+        return $query->result_array();
+    }
 }
 ?>

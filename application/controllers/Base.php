@@ -36,6 +36,8 @@ class Base extends CI_Controller{
         $data['nav'] = $this->load->view('components/nav',NULL, TRUE);
         $data['style'] = $this->load->view('include/ui', NULL, TRUE);
         $data['game'] = $this->games->getGame($id);
+        $data['kategori'] = $this->games->getKategori($data['game'][0]['Kategori']);
+        $data['recommend'] = $this->games->getRandomGames();
         $this->load->view('pages/details',$data);
     }
 }

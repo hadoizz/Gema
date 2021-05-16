@@ -20,5 +20,6 @@
     }
     #main{
         padding-top: 6rem;
+        color: white;
     }
 </style>
