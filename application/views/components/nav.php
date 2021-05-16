@@ -23,7 +23,7 @@
         <!--End: Desktop Nav-->
         
         <!--Start: Mobile Nav-->
-        <div class=" mobile only row" >
+        <div class="mobile only row" >
             <a class="header item" href="<?= base_url() ?>">
                 <div class="ui image" style="width: 110px;">
                     <img src="<?= base_url('/assets/img/logo1.png') ?>">
@@ -53,21 +53,7 @@
 </div>
 <script>
     $(document).ready(function() {
-        $('.computer.only .dropdown.item')
-            .popup({
-            inline     : true,
-            hoverable  : true,
-            position   : 'bottom left',
-            delay: {
-                show: 300,
-                hide: 800
-            }
-            })
-        ;
-        $('.ui.dropdown').dropdown();
-        $('.ui.accordion').accordion();
-
-        // bind "hide and show vertical menu" event to top right icon button 
+        $('.ui.vertical.menu').toggle("close");
         $('.ui.toggle.button').click(function() {
             $('.ui.vertical.menu').toggle("250", "linear")
         });
