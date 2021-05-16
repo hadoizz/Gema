@@ -2,25 +2,8 @@
 <html lang="en">
 
 <style>
-
-.image-detail {
-    margin: 0px;
-}
-
 .title {
     margin: 0px;
-}
-
-.price {
-    margin: 5px;
-}
-
-.detail {
-    margin-top: 20px;
-}
-
-.deskripsi {
-    margin-top: 0px;
 }
 
 </style>
@@ -33,17 +16,39 @@
 </head>
 <body>
     <?= $nav ?>
-    <div class="ui container" id="main" style="text-align: center; font-family: 'Quicksand', sans-serif;">
-        <img class="image-detail" width="300px" src="<?= base_url("/assets/uploads/poster/".$game[0]['Gambar'])?>" alt="Image not found">
-        <h1 class="title"><?= $game[0]['Nama_Barang']?></h1>
-        <h2 class="price">IDR <?= number_format($game[0]['Harga'])?></h2>
-        <h2 class="deskripsi"><?= $kategori[0]['Deskripsi']?></h2>
-        <div class="left floated author">
-            <a href="" class="ui teal icon button"><i class="cart plus icon"></i></a>
+    <div class="ui container" id="main" style="font-family: 'Quicksand', sans-serif;">
+        <div class="ui grid">
+            <div class="row">
+                <div class="five wide computer stackable column">
+                    <div class="ui rounded image">
+                        <img class="" src="<?= base_url("/assets/uploads/poster/".$game[0]['Gambar'])?>" alt="Image not found">
+                    </div>
+                </div>
+                <div class="eleven wide computer stackable column">
+                    <div class="row">
+                        <h1 class="ui header inverted"><?= $game[0]['Nama_Barang']?></h1>
+                        <div class="row">
+                            <a class="ui tag red label"><?= $kategori[0]['Deskripsi']?></a>
+                        </div><br>
+                        <p style="font-size: 20px;" class="inverted"><?= $game[0]['Deskripsi']?></p>
+                        <br>
+                        <div>
+                            <div class="ui container grid" >
+                                <div class="four wide column" style="background-color: #222831; border-radius: 5px;">
+                                    <h1 style="font-weight: normal;">IDR <?= number_format($game[0]['Harga'])?></h1>
+                                </div>
+                                <div class="five wide column">
+                                    <a href="" class="ui right labeled secondary icon button"><i class="cart plus icon"></i>Add to Cart</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <p style="background-color:transparent; font-size: 20px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);" class="ui segment left aligned"><?= $game[0]['Deskripsi']?></p>   
+        
 
-        <h2>Recommended Games</h2>
+        <h2 class="center aligned">Recommended Games</h2>
         <div class="ui center aligned grid">
                 <?php foreach($recommend as $item) {?>
                 <div class="eight wide mobile five wide tablet four wide computer stackable column left aligned">
