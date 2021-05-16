@@ -12,6 +12,8 @@ class Base extends CI_Controller{
         if(isset($_SESSION['role'])){
             if($_SESSION['role'] == 'admin'){
                 redirect(base_url("index.php/admin"));
+            } else {
+                $this->home();
             }
         }else{
             $this->home();
@@ -27,6 +29,7 @@ class Base extends CI_Controller{
     public function games(){
         $games['games'] = $this->games->getAllGames();
         $data['nav'] = $this->load->view('components/nav',NULL, TRUE);
+        $data['footer'] = $this->load->view('components/footer',NULL, TRUE);
         $data['style'] = $this->load->view('include/ui', NULL, TRUE);
         $data['showGames'] = $this->load->view('components/showGames',$games, TRUE);
         $this->load->view('pages/games',$data);
