@@ -32,8 +32,36 @@
                                         prompt: 'Please enter your password'
                                     },
                                     {
-                                        type: 'length[5]',
-                                        prompt: 'Your password must be at least 5 characters'
+                                        type: 'length[8]',
+                                        prompt: 'Your password must be at least {ruleValue} characters'
+                                    }
+                                ]
+                            },
+                            nama: {
+                                identifier: 'nama',
+                                rules: [{
+                                        type: 'empty',
+                                        prompt: 'Please enter your name'
+                                    }
+                                ]
+                            },
+                            alamat: {
+                                identifier: 'alamat',
+                                rules: [{
+                                        type: 'empty',
+                                        prompt: 'Please enter your address'
+                                    }
+                                ]
+                            },
+                            notelp: {
+                                identifier: 'notelp',
+                                rules: [{
+                                        type: 'empty',
+                                        prompt: 'Please enter your telephone number'
+                                    },
+                                    {
+                                        type: 'number',
+                                        prompt: 'Your telephone number must be a numeric'
                                     }
                                 ]
                             }
@@ -48,23 +76,15 @@
 
     <br><br>
     <div class="ui container" style="margin-top: 6rem">
-        <?php if(isset($_GET['register'])) { ?>
-            <div class='ui green message'>
-                <div class='header'>
-                    Registration Successful
-                </div>
-                <p>Login to continue</p>
-            </div>
-        <?php } ?>
         <div class="ui middle aligned center aligned grid">
             <div class="column" style="max-width: 450px">
                 <h2 class="ui teal image header">
                     <!-- <img src="assets/images/logo.png" class="image"> -->
                     <div class="content">
-                        Log-in to your account
+                        Register to your account
                     </div>
                 </h2>
-                <form class="ui large form" method="POST" action="<?= base_url('index.php/Login/auth') ?>">
+                <form class="ui large form" method="POST" action="<?= base_url('index.php/Register/auth') ?>">
                     <div class="ui stacked segment">
                         <div class="field">
                             <div class="ui left icon input">
@@ -78,25 +98,35 @@
                                 <input type="password" name="password" placeholder="Password">
                             </div>
                         </div>
+                        <div class="field">
+                            <div class="ui left icon input">
+                                <i class="user icon"></i>
+                                <input type="text" name="nama" placeholder="Name">
+                            </div>
+                        </div>
+                        <div class="field">
+                            <div class="ui left icon input">
+                                <i class="address card icon"></i>
+                                <input type="text" name="alamat" placeholder="Alamat">
+                            </div>
+                        </div>
+                        <div class="field">
+                            <div class="ui left icon input">
+                                <i class="phone icon"></i>
+                                <input type="text" name="notelp" placeholder="No Telepon">
+                            </div>
+                        </div>
 
                         <button class="ui fluid large teal button" type="submit">
-                            Login
+                            Register
                         </button>
                     </div>
 
                     <div class="ui error message"></div>
-                    <?php if (isset($_GET['login'])) { ?>
-                        <div class='ui red message'>
-                            <div class='header'>
-                                Sumting wong
-                            </div>
-                            <p>Data yang anda masukkan ada Sumting Wong .</p>
-                        </div>
-                    <?php } ?>
                 </form>
 
                 <div class="ui message">
-                    New to us? <a href="<?= base_url('index.php/Register') ?>">Sign Up</a>
+                    Already have an account? <a href="<?= base_url('index.php/Login') ?>">Login</a>
                 </div>
             </div>
         </div>
