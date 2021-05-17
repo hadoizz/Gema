@@ -24,7 +24,9 @@ class Base extends CI_Controller{
 
     public function home(){
         $games['games'] = $this->games->getAllGames();
-        if(isset($_SESSION['email'])) $rawCart['items'] = $this->transaction->getCartValue($_SESSION['email']);        
+        if(isset($_SESSION['email'])) $rawCart['items'] = $this->transaction->getCartValue($_SESSION['email']);
+        else $rawCart['items'] = array();
+
         $cart['cart'] = $this->load->view('components/cartModal',$rawCart, TRUE);
         $data['nav'] = $this->load->view('components/nav',$cart, TRUE);
         $data['style'] = $this->load->view('include/ui',NULL,TRUE);
@@ -34,7 +36,9 @@ class Base extends CI_Controller{
     
     public function games(){
         $games['games'] = $this->games->getAllGames();
-        if(isset($_SESSION['email'])) $rawCart['items'] = $this->transaction->getCartValue($_SESSION['email']);        
+        if(isset($_SESSION['email'])) $rawCart['items'] = $this->transaction->getCartValue($_SESSION['email']);
+        else $rawCart['items'] = array();
+
         $cart['cart'] = $this->load->view('components/cartModal',$rawCart, TRUE);
         $data['nav'] = $this->load->view('components/nav',$cart, TRUE);
         $data['footer'] = $this->load->view('components/footer',NULL, TRUE);
@@ -44,7 +48,9 @@ class Base extends CI_Controller{
     }
 
     public function details($id){
-        if(isset($_SESSION['email'])) $rawCart['items'] = $this->transaction->getCartValue($_SESSION['email']);        
+        if(isset($_SESSION['email'])) $rawCart['items'] = $this->transaction->getCartValue($_SESSION['email']);
+        else $rawCart['items'] = array();
+
         $cart['cart'] = $this->load->view('components/cartModal',$rawCart, TRUE);
         $data['nav'] = $this->load->view('components/nav',$cart, TRUE);
         $data['style'] = $this->load->view('include/ui', NULL, TRUE);
