@@ -23,7 +23,7 @@ class Transaction extends CI_Model{
 	}
 
 	public function getCartValue($email){
-		$query = $this->db->query("SELECT * FROM cart WHERE Email = '$email'");
+		$query = $this->db->query("SELECT Id, Nama_Barang, Harga, Gambar FROM barang WHERE Id in (SELECT Id_Barang FROM cart WHERE Email = '$email')");
 		return $query->result_array();
 	}
 }

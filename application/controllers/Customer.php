@@ -7,7 +7,6 @@ class Customer extends CI_Controller{
         session_start();
         $this->load->model('transaction');
 
-
         if(!isset($_SESSION['role'])){
             redirect(base_url('index.php/login'));
         }else{
