@@ -17,5 +17,18 @@ class User extends CI_Model{
         $role = $this->db->get_where('user', array('Email' => $email))->row()->Role;
         return $role;
     }
+
+    public function register($email, $password, $nama, $alamat, $notelp){
+        $data = array(
+            'Email' => "$email",
+            'Password' => "$password",
+            'Nama' => "$nama",
+            'Alamat' => "$alamat",
+            'NoTelepon' => "$notelp",
+            'Role' => 1
+        );
+    
+        $this->db->insert('user', $data);
+    }
 }
 ?>

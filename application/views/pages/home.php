@@ -53,5 +53,6 @@
         $(this).closest('.message').transition('fade');
     });
     </script>
+    <?= $footer ?>
 </body>
 </html>
