@@ -59,16 +59,10 @@
             <div class="ui icon top right pointing dropdown item"><i class="user icon"></i>
                     <div class="menu">
                         <?php if(!isset($_SESSION['role'])){ ?>    
-                            <div class="item" >
-                                <a href="<?= base_url('index.php/Login') ?>" style="color: black;">Login</a>
-                            </div>
+                            <a href="<?= base_url('index.php/Login') ?>" style="color: black;">Login</a>
                         <?php }else{ ?>
-                            <div class="item" >
-                                <a href="#" style="color: black;">Order history</a>
-                            </div>
-                            <div class="item" >
-                                <a href="<?= base_url('index.php/Login/logOut') ?>" style="color: black;">Logout</a>
-                            </div>
+                            <a href="#" style="color: black;">Order history</a>
+                            <a href="<?= base_url('index.php/Login/logOut') ?>" style="color: black;">Logout</a>
                         <?php }?>
                     </div>
                 </div>
