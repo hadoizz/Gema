@@ -1,5 +1,5 @@
 <?php foreach($games as $item){ ?>
-<div class="eight wide mobile five wide tablet four wide computer stackable column left aligned"  style="margin-bottom: 10px;">
+<div class="eight wide mobile four wide tablet three wide computer stackable column left aligned"  style="margin-bottom: 10px;">
     <div class="row">
         <div class="ui fluid rounded image">
             <img id="poster" src="<?= base_url('assets/uploads/poster/'.$item['Gambar']) ?>">

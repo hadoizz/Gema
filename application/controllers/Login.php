@@ -24,7 +24,7 @@ class Login extends CI_Controller{
             } else {
                 $_SESSION['role'] = 'user';
             }
-            redirect(base_url('index.php/base'));
+            redirect(base_url());
         } else {
             redirect(base_url('index.php/Login?login=false'));
         }
