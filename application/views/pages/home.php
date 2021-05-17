@@ -21,14 +21,24 @@
 <body>
     <?= $nav ?>
     <div class="ui container" id="main">
-        <?php if (isset($_GET['success'])) { ?>
-            <div class='ui green message'>
-            <i class="close icon"></i>
-                <div class='header'>
-                    Success
+        <?php if (isset($_GET['success'])) { 
+            if($_GET['success'] == 'true') {?>
+                <div class='ui green message'>
+                    <i class="close icon"></i>
+                    <div class='header'>
+                        Success
+                    </div>
+                    <p>Added to cart successfully</p>
                 </div>
-                <p>Added to cart successfully</p>
-            </div>
+        <?php }else{ ?>
+                <div class='ui yellow message'>
+                    <i class="close icon"></i>
+                    <div class='header'>
+                        Warning
+                    </div>
+                    <p>This item is already in the cart</p>
+                </div>
+            <?php } ?>
         <?php } ?>
         <h1>Ini Home</h1>
         <div class="ui center aligned grid">

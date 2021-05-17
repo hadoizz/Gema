@@ -18,8 +18,12 @@ class Customer extends CI_Controller{
 	}
 
     public function addToCart($id){
-        $this->transaction->insertCart($id, $_SESSION['email']);
-        redirect(base_url('?success=true'));
+        if($this->transaction->cekCart($id, $_SESSION['email']) == 0){
+            $this->transaction->insertCart($id, $_SESSION['email']);
+            redirect(base_url('?success=true'));
+        }else{
+            redirect(base_url('?success=false'));
+        }
     }
 
 }
