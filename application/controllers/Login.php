@@ -22,7 +22,7 @@ class Login extends CI_Controller{
             if($this->user->getRole($email) == "0"){
                 $_SESSION['role'] = 'admin';
             } else {
-                $_SESSION['role'] = 'user';
+                $_SESSION['role'] = 'customer';
             }
             redirect(base_url());
         } else {

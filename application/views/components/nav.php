@@ -17,6 +17,11 @@
             
             <div class="right menu">
                 <a class="item">About Us</a>
+                <?php if(isset($_SESSION['role'])){?>
+                    <a class="item">
+                        <div class="ui teal button"><i class="shopping cart icon"></i>0</div>
+                    </a>
+                <?php } ?>
                 <div class="ui icon top right pointing dropdown item"><i class="user icon"></i>
                     <div class="menu">
                         <?php if(!isset($_SESSION['role'])){ ?>    
