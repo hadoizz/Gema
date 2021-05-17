@@ -17,34 +17,36 @@
 <body>
     <?= $nav ?>
     <div class="ui container" id="main" style="font-family: 'Quicksand', sans-serif;">
-        <div class="ui grid">
-            <div class="row">
-                <div class="five wide computer stackable column">
+        <div class="ui grid centered tablet">
+                <div class="twelve wide mobile six wide tablet five wide computer stackable column">
                     <div class="ui rounded image">
                         <img class="" src="<?= base_url("/assets/uploads/poster/".$game[0]['Gambar'])?>" alt="Image not found">
                     </div>
                 </div>
-                <div class="eleven wide computer stackable column">
+                <div class="twelve wide mobile ten wide tablet eleven wide computer stackable column">
                     <div class="row">
                         <h1 class="ui header inverted"><?= $game[0]['Nama_Barang']?></h1>
-                        <div class="row">
-                            <a class="ui tag red label"><?= $kategori[0]['Deskripsi']?></a>
-                        </div><br>
-                        <p style="font-size: 20px;" class="inverted"><?= $game[0]['Deskripsi']?></p>
-                        <br>
-                        <div>
-                            <div class="ui container grid" >
-                                <div class="four wide column" style="background-color: #222831; border-radius: 5px;">
-                                    <h1 style="font-weight: normal;">IDR <?= number_format($game[0]['Harga'])?></h1>
-                                </div>
-                                <div class="five wide column">
-                                    <a href="#" class="ui right labeled green icon button"><i class="cart plus icon"></i>Add to Cart</a>
-                                </div>
+                    </div><br>
+                    <div class="row">
+                        <a class="ui tag red label"><?= $kategori[0]['Deskripsi']?></a>
+                    </div><br>
+                    <div class="row">
+                        <p style="font-size: 18px;" class="inverted  "><?= $game[0]['Deskripsi']?></p>
+                    </div><br>
+                    <br>
+                    <div class="ui grid">
+                        <div class="ten wide computer sixteen wide mobile center aligned column" style="background-color: #222831; border-radius: 5px;">
+                        <div class="ui grid">
+                            <div class="eight wide column">
+                                <h1 style="font-weight: normal;">IDR <?= number_format($game[0]['Harga'])?></h1>
                             </div>
+                            <div class="eight wide column">
+                                <a href="#" class="ui right labeled green icon button"><i class="cart plus icon"></i>Add to Cart</a>
+                            </div>
+                        </div>
                         </div>
                     </div>
                 </div>
-            </div>
         </div>
         
         <br><br>
