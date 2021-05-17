@@ -12,7 +12,7 @@
                 <h5 class="ui header" style="color: white; height: 50px; font-weight: normal;"><?= $item['Nama_Barang'] ?></h5>
                 <div class="ui divider"></div>
                 <div class="description">
-                    <h4 style="color: white;">IDR <?= number_format($item['Harga']) ?>.-</h4>    
+                    <h4 style="color: white;">IDR <?= number_format($item['Harga']) ?>.-/day</h4>    
                 </div>
             </div>
             <div class="extra content">
