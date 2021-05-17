@@ -30,7 +30,7 @@
                 <h3>Total: IDR <?= number_format($total) ?></h3>
             </div>
             <div class="eight wide column right aligned">
-                <a href="#" class="ui green button">Checkout</a>
+                <a href="#" class="ui green button <?php if($total == 0) echo "disabled"; ?>">Checkout</a>
             </div>
         </div>
     </div>
