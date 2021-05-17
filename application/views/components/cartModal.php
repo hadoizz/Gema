@@ -1,8 +1,11 @@
 <div class="ui modal ">
     <div class="header">Your cart: <?= $_SESSION['cart'] ?> Item</div>
     <div class="scrolling content">
-        <?php if(count($items) == 0) echo "Your cart is empty";
-        else{
+        <?php if(count($items) == 0) {
+            echo "Your cart is empty";
+            $total = 0;
+
+        }else{
             $total = 0;
             foreach($items as $item ){?>
             <?php $total += $item['Harga'];?>
