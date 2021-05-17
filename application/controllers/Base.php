@@ -24,7 +24,12 @@ class Base extends CI_Controller{
 
     public function home(){
         $games['games'] = $this->games->getAllGames();
-        $data['nav'] = $this->load->view('components/nav',NULL, TRUE);
+        if(isset($_SESSION['email'])){
+            $cart['items'] = $this->transaction->getCartValue($_SESSION['email']);
+        }else{
+            $cart['items'] = array();
+        }
+        $data['nav'] = $this->load->view('components/nav',$cart, TRUE);
         $data['style'] = $this->load->view('include/ui',NULL,TRUE);
         $data['showGames'] = $this->load->view('components/showGames',$games, TRUE);
         $this->load->view('pages/home',$data);

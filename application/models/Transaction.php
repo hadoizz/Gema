@@ -21,5 +21,10 @@ class Transaction extends CI_Model{
 		$query = $this->db->query("SELECT COUNT(*) FROM cart WHERE Email = '$email' AND ID_Barang = '$id'");
 		return ($query->result_array()[0]['COUNT(*)']);
 	}
+
+	public function getCartValue($email){
+		$query = $this->db->query("SELECT * FROM cart WHERE Email = '$email'");
+		return $query->result_array();
+	}
 }
 ?>
