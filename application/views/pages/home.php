@@ -21,6 +21,15 @@
 <body>
     <?= $nav ?>
     <div class="ui container" id="main">
+        <?php if (isset($_GET['success'])) { ?>
+            <div class='ui green message'>
+            <i class="close icon"></i>
+                <div class='header'>
+                    Success
+                </div>
+                <p>Added to cart successfully</p>
+            </div>
+        <?php } ?>
         <h1>Ini Home</h1>
         <div class="ui center aligned grid">
         <?php 
@@ -28,5 +37,11 @@
         ?>
         </div>
     </div>
+    <script>
+    $('.message .close')
+    .on('click', function() {
+        $(this).closest('.message').transition('fade');
+    });
+    </script>
 </body>
 </html>

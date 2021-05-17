@@ -7,6 +7,7 @@ class Customer extends CI_Controller{
         session_start();
         $this->load->model('transaction');
 
+
         if(!isset($_SESSION['role'])){
             redirect(base_url('index.php/login'));
         }else{
@@ -17,6 +18,8 @@ class Customer extends CI_Controller{
 	}
 
     public function addToCart($id){
+        $this->transaction->insertCart($id, $_SESSION['email']);
+        redirect(base_url('?success=true'));
     }
 
 }

@@ -13,9 +13,10 @@ class Transaction extends CI_Model{
 		return ($query->result_array()[0]['COUNT(*)']);
 	}
 
-	public function addToCart($email, $id){
-		
+	public function insertCart($id, $email){
+		$query = $this->db->query("INSERT INTO cart (Id_Barang, Email) VALUES ('$id', '$email')");
 	}
+
     
 }
 ?>
