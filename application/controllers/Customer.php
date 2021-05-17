@@ -5,7 +5,7 @@ class Customer extends CI_Controller{
     public function __construct(){
 		parent::__construct();
         session_start();
-        $this->load->model('games');
+        $this->load->model('transaction');
 
         if(!isset($_SESSION['role'])){
             redirect(base_url('index.php/login'));
@@ -17,7 +17,6 @@ class Customer extends CI_Controller{
 	}
 
     public function addToCart($id){
-        echo "Sini";
     }
 
 }

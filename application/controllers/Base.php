@@ -6,6 +6,7 @@ class Base extends CI_Controller{
 		parent::__construct();
         session_start();
         $this->load->model('games');
+        $this->load->model('transaction');
 	}
     
     public function index(){
@@ -13,6 +14,7 @@ class Base extends CI_Controller{
             if($_SESSION['role'] == 'admin'){
                 redirect(base_url("index.php/admin"));
             } else {
+                $_SESSION['cart'] = $this->transaction->getCartTotal($_SESSION['email']);
                 $this->home();
             }
         }else{

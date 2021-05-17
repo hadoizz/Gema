@@ -6,6 +6,7 @@ class Login extends CI_Controller{
 		parent::__construct();
         session_start();
         $this->load->model('user');
+        $this->load->model('transaction');
 	}
     
     public function index(){
@@ -21,8 +22,10 @@ class Login extends CI_Controller{
         if($this->user->cekUser($email, md5($password))){
             if($this->user->getRole($email) == "0"){
                 $_SESSION['role'] = 'admin';
+                $_SESSION['email'] = $email;
             } else {
                 $_SESSION['role'] = 'customer';
+                $_SESSION['email'] = $email;
             }
             redirect(base_url());
         } else {
@@ -31,7 +34,7 @@ class Login extends CI_Controller{
     }
 
     public function logOut(){
-        session_destroy();
+        session_destroy();  
         redirect(base_url());
     }
 }

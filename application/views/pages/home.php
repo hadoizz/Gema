@@ -21,7 +21,7 @@
 <body>
     <?= $nav ?>
     <div class="ui container" id="main">
-        <h1>Ini <?= $_SESSION['role']?></h1>
+        <h1>Ini Home</h1>
         <div class="ui center aligned grid">
         <?php 
             echo $showGames; 
