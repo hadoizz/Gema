@@ -57,15 +57,15 @@
                 </div>
             </a>
             <div class="ui icon top right pointing dropdown item"><i class="user icon"></i>
-                    <div class="menu">
-                        <?php if(!isset($_SESSION['role'])){ ?>    
-                            <a href="<?= base_url('index.php/Login') ?>" style="color: black;">Login</a>
-                        <?php }else{ ?>
-                            <a href="#" style="color: black;">Order history</a>
-                            <a href="<?= base_url('index.php/Login/logOut') ?>" style="color: black;">Logout</a>
-                        <?php }?>
-                    </div>
+                <div class="menu">
+                    <?php if(!isset($_SESSION['role'])){ ?>    
+                        <a href="<?= base_url('index.php/Login') ?>" style="color: black;">Login</a>
+                    <?php }else{ ?>
+                        <a href="#" style="color: black;">Order history</a>
+                        <a href="<?= base_url('index.php/Login/logOut') ?>" style="color: black;">Logout</a>
+                    <?php }?>
                 </div>
+            </div>
             <div class="ui vertical accordion borderless fluid menu" style="background-color: #393e46;">
                 <a class="item">PC</a>
                 <a class="item">PS2</a>

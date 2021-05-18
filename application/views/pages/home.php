@@ -27,37 +27,11 @@
 <body>
     <?= $nav ?>
     <div class="ui container" id="main">
-        <?php if (isset($_GET['success'])) { 
-            if($_GET['success'] == 'true') {?>
-                <div class='ui green message'>
-                    <i class="close icon"></i>
-                    <div class='header'>
-                        Success
-                    </div>
-                    <p>Added to cart successfully</p>
-                </div>
-        <?php }else{ ?>
-                <div class='ui yellow message'>
-                    <i class="close icon"></i>
-                    <div class='header'>
-                        Warning
-                    </div>
-                    <p>This item is already in the cart</p>
-                </div>
-            <?php } ?>
-        <?php }else if(isset($_GET['delete'])) { ?> 
-                <div class='ui yellow message'>
-                    <i class="close icon"></i>
-                    <div class='header'>
-                        Success
-                    </div>
-                    <p>Item removed from cart</p>
-                </div>
-        <?php } ?>
+        <?= $alert ?>
         <div class="ui center aligned grid">
         <div class="fourteen wide column">
             <div class="fotorama" style="border-radius: 10px" data-loop="true" data-autoplay="true" 
-                data-width="100%" data-ratio="400/200" data-minwidth="400" 
+                data-width="100%" data-ratio="400/200" data-minwidth="200" 
                 data-maxwidth="1000" data-minheight="300" data-maxheight="100%">
                 <img src= <?= base_url('/assets/img/motogp.jpg')?>>
                 <img src= <?= base_url('/assets/img/resident.jpg')?>>

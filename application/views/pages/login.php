@@ -65,7 +65,7 @@
                     </div>
                 </h2>
                 <form class="ui large form" method="POST" action="<?= base_url('index.php/Login/auth') ?>">
-                    <div class="ui stacked segment">
+                    <div class="ui stacked segment" style="background-color: #222831;">
                         <div class="field">
                             <div class="ui left icon input">
                                 <i class="user icon"></i>
@@ -95,8 +95,8 @@
                     <?php } ?>
                 </form>
 
-                <div class="ui message">
-                    New to us? <a href="<?= base_url('index.php/Register') ?>">Sign Up</a>
+                <div class="ui message inverted" style="background-color: #222831;">
+                    New to us? <a href="<?= base_url('index.php/Register') ?>">Register here</a>
                 </div>
             </div>
         </div>
