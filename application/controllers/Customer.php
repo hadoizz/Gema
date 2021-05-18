@@ -30,7 +30,14 @@ class Customer extends CI_Controller{
         redirect(base_url('?delete=true'));
     }
 
-    public function order(){
+    public function confirmOrder(){
+        if(isset($_SESSION['email'])) $data['items'] = $this->transaction->getCartValue($_SESSION['email']);
+        $data['style'] = $this->load->view('include/ui', NULL, TRUE);
+
+        $this->load->view('pages/confirmOrder',$data);
+    }
+
+    public function submitOrder() {
         
     }
 }

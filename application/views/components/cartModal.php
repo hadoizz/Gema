@@ -32,22 +32,23 @@
     <div class="actions">
         <div class="ui grid left aligned">
             <div class="eight wide column">
-                <div class="ui labeled input">
-                    <div class="ui label">
-                    IDR <span id=""><?= number_format($total) ?></span>  ×
-                    </div>
-                    <input type="number" value="" id="hari" oninput="calculateTotal(<?= $total?>)" placeholder="day" min=0>
-                    <div class="ui label" id="equal">= IDR 0</div>
-                </div>
+                <!-- <div class="ui labeled input"> -->
+                    <!-- <div class="ui label">
+                    IDR <span id=""><?php //number_format($total) ?></span>  ×
+                    </div> -->
+                    <!-- <input type="number" value="" id="hari" oninput="calculateTotal(<?= $total?>)" placeholder="day" min=0> -->
+                    <!-- <div class="ui label" id="equal">= IDR 0</div> -->
+                <!-- </div> -->
+                <h2>Total : IDR <?= number_format($total); ?> / day</h2>
             </div>
             <div class="eight wide column right aligned">
-                <a href="#" id="checkoutBtn" class="ui green button disabled">Checkout</a>
+                <a href="<?= base_url('index.php/Customer/confirmOrder') ?>" id="checkoutBtn" class="ui green button <?php if($total == 0) echo "disabled" ?>">Checkout</a>
             </div>
         </div>
     </div>
 </div>
 <?php //if($total == 0) echo "disabled"; ?>
-<script>
+<!-- <script>
     function calculateTotal(total){
         var hari = document.getElementById('hari').value;
         
@@ -65,4 +66,4 @@
             checkout.classList.add('disabled')
         }
     }
-</script>
+</script> -->
