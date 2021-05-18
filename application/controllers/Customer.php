@@ -54,5 +54,9 @@ class Customer extends CI_Controller{
         $this->transaction->deleteAllCart($_SESSION['email']);
         redirect(base_url('?order=true'));
     }
+
+    public function orderHistory() {
+
+    }
 }
 ?>

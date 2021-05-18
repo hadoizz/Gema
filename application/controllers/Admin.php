@@ -95,7 +95,9 @@ class Admin extends CI_Controller{
              ->set_relation('Status', 'status', 'Deskripsi')
              ->unset_add()
              ->unset_delete()
-             ->callback_edit_field('Status', array($this, 'edit_status'));
+             ->callback_edit_field('Status', array($this, 'edit_status'))
+             ->callback_edit_field('Lama_Sewa', array($this, 'edit_lamaSewa'))
+             ->callback_edit_field('Email', array($this, 'edit_email'));
 
         $output = $crud->render();
         $data['crud'] = get_object_vars($output);
@@ -115,10 +117,22 @@ class Admin extends CI_Controller{
             return "<input name='Status' readonly value='Sudah dikirim' />";
         }else if($value == 3){
             return '<select name="Status">
-                        <option value="1">Siap di pick-up</option>
-                        <option value="2">Sudah dikirim</option>
+                        <option value="3">Siap di pick-up</option>
+                        <option value="4">Selesai</option>
+                    </select>';
+        }else if($value == 4) {
+            return '<select name="Status">
+                        <option value="4">Selesai</option>
                     </select>';
         }
+    }
+
+    function edit_lamaSewa($value) {
+        return "<input value='$value' disabled/>";
+    }
+
+    function edit_email($value) {
+        return "<input value='$value' disabled/>";
     }
 }
 ?>
