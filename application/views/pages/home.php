@@ -58,9 +58,10 @@
                 <img src= <?= base_url('/assets/img/cyberpunk44.jpg')?>>
             </div>
         </div>
-        <?php 
-            echo $showGames; 
-        ?>
+        <div class="sixteen wide column">
+            <div class="ui horizontal inverted divider">Our Games</div>
+        </div>
+        <?php echo $showGames; ?>
         </div>
     </div>
     <script>
