@@ -94,7 +94,8 @@ class Admin extends CI_Controller{
              ->columns('Id_Order', 'Email', 'Status', 'Lama_Sewa')
              ->set_relation('Status', 'status', 'Deskripsi')
              ->unset_add()
-             ->unset_delete();
+             ->unset_delete()
+             ->callback_edit_field('Status', array($this, 'edit_status'));
 
         $output = $crud->render();
         $data['crud'] = get_object_vars($output);
@@ -102,6 +103,22 @@ class Admin extends CI_Controller{
 
         $data['style'] = $this->load->view('include/ui',NULL,TRUE);
         $this->load->view('admin/order', $data);
+    }
+
+    function edit_status($value) {
+        if($value == 1) {
+            return '<select name="Status">
+                        <option value="1">Sedang dikirim</option>
+                        <option value="2">Sudah dikirim</option>
+                    </select>';
+        }else if($value == 2){
+            return "<input name='Status' readonly value='Sudah dikirim' />";
+        }else if($value == 3){
+            return '<select name="Status">
+                        <option value="1">Siap di pick-up</option>
+                        <option value="2">Sudah dikirim</option>
+                    </select>';
+        }
     }
 }
 ?>
