@@ -56,7 +56,10 @@ class Customer extends CI_Controller{
     }
 
     public function orderHistory() {
+        $data['items'] = $this->transaction->getOrderHistory($_SESSION['email']);
+        $data['style'] = $this->load->view('include/ui', NULL, TRUE);
 
+        $this->load->view('pages/orderHistory',$data);
     }
 }
 ?>

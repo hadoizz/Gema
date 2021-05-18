@@ -75,7 +75,7 @@
                                 <h1 style="font-weight: normal;">IDR <?= number_format($game[0]['Harga'])?></h1>
                             </div>
                             <div class="eight wide column">
-                                <a href="#" class="ui right labeled green icon button"><i class="cart plus icon"></i>Add to Cart</a>
+                                <a href="<?= base_url('index.php/customer/addToCart/'.$game[0]['Id'])?>" class="ui right labeled green icon button"><i class="cart plus icon"></i>Add to Cart</a>
                             </div>
                         </div>
                         </div>

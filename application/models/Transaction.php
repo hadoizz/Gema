@@ -47,5 +47,10 @@ class Transaction extends CI_Model{
 	public function insertDetailOrder($idOrder, $idBarang) {
 		$query = $this->db->query("INSERT INTO `detail_order` (Id_Order, Id_Barang) VALUES ('$idOrder', '$idBarang')");
 	}
+
+	public function getOrderHistory($email){
+		$query = $this->db->query("SELECT * FROM `order` WHERE Email = '$email'");
+		return $query->result_array();
+	}
 }
 ?>
