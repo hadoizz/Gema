@@ -6,6 +6,43 @@
     margin: 0px;
 }
 
+* {
+  box-sizing: border-box;
+}
+
+.bg-img {
+    background-image: url("<?php echo base_url("/assets/background/".$game[0]['Background'])?>");
+    
+    filter: blur(8px);
+    -webkit-filter: blur(8px);
+    
+    height: 100%; 
+    
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    margin-bottom: 0px;
+}
+
+.bg-text {
+  background-color: rgb(0,0,0); 
+  background-color: rgba(0,0,0, 0.4); 
+  color: white;
+  font-weight: bold;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  width: 80%;
+  padding: 20px;
+  text-align: center;
+  /* box-shadow: 5px 10px; 
+  box-shadow: 0px 10px 20px 0 rgba(0, 0, 0, 1); */
+  
+}
+
 </style>
 <head>
     <meta charset="UTF-8">
@@ -16,41 +53,43 @@
 </head>
 <body>
     <?= $nav ?>
+    <div class="bg-img"></div>
     <div class="ui container" id="main" style="font-family: 'Quicksand', sans-serif;">
-        <div class="ui grid centered tablet">
-                <div class="twelve wide mobile six wide tablet five wide computer stackable column">
-                    <div class="ui rounded image">
-                        <img class="" src="<?= base_url("/assets/uploads/poster/".$game[0]['Gambar'])?>" alt="Image not found">
-                    </div>
+    <div>
+        <div class="ui grid centered tablet bg-text">
+            <div class="twelve wide mobile six wide tablet five wide computer stackable column">
+                <div class="ui rounded image">
+                    <img class="" src="<?= base_url("/assets/uploads/poster/".$game[0]['Gambar'])?>" alt="Image not found">
                 </div>
-                <div class="twelve wide mobile ten wide tablet eleven wide computer stackable column">
-                    <div class="row">
-                        <h1 class="ui header inverted"><?= $game[0]['Nama_Barang']?></h1>
-                    </div><br>
-                    <div class="row">
-                        <a class="ui tag red label"><?= $kategori[0]['Deskripsi']?></a>
-                    </div><br>
-                    <div class="row">
-                        <p style="font-size: 18px;" class="inverted  "><?= $game[0]['Deskripsi']?></p>
-                    </div><br>
-                    <br>
+            </div>
+            <div class="twelve wide mobile ten wide tablet eleven wide computer stackable column">
+                <div class="row">
+                    <h1 class="ui header inverted"><?= $game[0]['Nama_Barang']?></h1>
+                </div><br>
+                <div class="row">
+                    <a class="ui tag red label"><?= $kategori[0]['Deskripsi']?></a>
+                </div><br>
+                <div class="row">
+                    <p style="font-size: 18px;" class="inverted  "><?= $game[0]['Deskripsi']?></p>
+                </div><br>
+                <br>
+                <div class="ui grid">
+                    <div class="ten wide computer sixteen wide mobile center aligned column" style="background-color: #222831; border-radius: 5px;">
                     <div class="ui grid">
-                        <div class="ten wide computer sixteen wide mobile center aligned column" style="background-color: #222831; border-radius: 5px;">
-                        <div class="ui grid">
-                            <div class="eight wide column">
-                                <h1 style="font-weight: normal;">IDR <?= number_format($game[0]['Harga'])?></h1>
-                            </div>
-                            <div class="eight wide column">
-                                <a href="#" class="ui right labeled green icon button"><i class="cart plus icon"></i>Add to Cart</a>
-                            </div>
+                        <div class="eight wide column">
+                            <h1 style="font-weight: normal;">IDR <?= number_format($game[0]['Harga'])?></h1>
                         </div>
+                        <div class="eight wide column">
+                            <a href="#" class="ui right labeled green icon button"><i class="cart plus icon"></i>Add to Cart</a>
                         </div>
                     </div>
+                    </div>
                 </div>
+            </div>
         </div>
-        
+    </div>
         <br><br>
-        <div class="ui container center aligned">
+        <div class="ui container center aligned" style="margin-top: 0px;">
             <h2 class="">You may also like</h2>
         </div>
         <div class="ui center aligned grid">
