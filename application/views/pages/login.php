@@ -8,38 +8,52 @@
     <title>Home</title>
     <?= $style ?>
     <script>
-        $(document)
-            .ready(function() {
-                $('.ui.form')
-                    .form({
-                        fields: {
-                            email: {
-                                identifier: 'email',
-                                rules: [{
-                                        type: 'empty',
-                                        prompt: 'Please enter your e-mail'
-                                    },
-                                    {
-                                        type: 'email',
-                                        prompt: 'Please enter a valid e-mail'
-                                    }
-                                ]
+        $(document).ready(function() {
+            $('.ui.form').form({
+                fields: {
+                    email: {
+                        identifier: 'email',
+                        rules: [{
+                                type: 'empty',
+                                prompt: 'Please enter your e-mail'
                             },
-                            password: {
-                                identifier: 'password',
-                                rules: [{
-                                        type: 'empty',
-                                        prompt: 'Please enter your password'
-                                    },
-                                    {
-                                        type: 'length[5]',
-                                        prompt: 'Your password must be at least 5 characters'
-                                    }
-                                ]
+                            {
+                                type: 'email',
+                                prompt: 'Please enter a valid e-mail'
                             }
-                        }
-                    });
+                        ]
+                    },
+                    password: {
+                        identifier: 'password',
+                        rules: [{
+                                type: 'empty',
+                                prompt: 'Please enter your password'
+                            },
+                            {
+                                type: 'length[5]',
+                                prompt: 'Your password must be at least 5 characters'
+                            }
+                        ]
+                    },
+                    captcha: {
+                        identifier: 'captcha',
+                        rules: [{
+                                type: 'empty',
+                                prompt: 'Please enter the captcha'
+                            }
+                        ]
+                    }
+                }
             });
+        });
+
+        $(document).ready(function() {
+            $('.captcha-refresh').on('click', function() {
+                $.get('<?php echo base_url() . 'index.php/login/refresh'; ?>', function(data) {
+                    $('#image_captcha').html(data);
+                });
+            });
+        });
     </script>
 </head>
 
@@ -76,6 +90,17 @@
                             <div class="ui left icon input">
                                 <i class="lock icon"></i>
                                 <input type="password" name="password" placeholder="Password">
+                            </div>
+                        </div>
+                        <div class="field">
+                            <!-- <div class="ui left icon input"> -->
+                                <p id="image_captcha"><?php echo $captchaImg; ?></p>
+                            <!-- </div> -->
+                        </div>
+                        <div class="field">
+                            <div class="ui left icon input">
+                                <a href="javascript:void(0);" class="captcha-refresh"><i class="refresh icon"></i></a>
+                                <input type="text" name="captcha" placeholder="Enter the Captcha above">
                             </div>
                         </div>
 
