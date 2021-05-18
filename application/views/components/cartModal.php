@@ -36,7 +36,7 @@
                     <div class="ui label">
                     IDR <span id=""><?= number_format($total) ?></span>  ×
                     </div>
-                    <input type="number" value="" id="hari" oninput="calculateTotal(<?= $total?>)" placeholder="day">
+                    <input type="number" value="" id="hari" oninput="calculateTotal(<?= $total?>)" placeholder="day" min=0>
                     <div class="ui label" id="equal">= IDR 0</div>
                 </div>
             </div>
@@ -50,12 +50,18 @@
 <script>
     function calculateTotal(total){
         var hari = document.getElementById('hari').value;
-        var hasil = (total*hari).toLocaleString();
-        document.getElementById('equal').innerHTML = "= IDR "+ hasil;
+        
         var checkout = document.getElementById('checkoutBtn');
-        if(hari!=0){
+        if(hari > 0){
+            var hasil = (total*hari).toLocaleString();
+            document.getElementById('equal').innerHTML = "= IDR "+ hasil;
             checkout.classList.remove('disabled')
-        }else{
+        }else if(hari < 0){
+            document.getElementById('equal').innerHTML = "= IDR 0";
+            checkout.classList.add('disabled')
+            document.getElementById('hari').value = 0
+        }else if(hari == 0){
+            document.getElementById('equal').innerHTML = "= IDR 0";
             checkout.classList.add('disabled')
         }
     }

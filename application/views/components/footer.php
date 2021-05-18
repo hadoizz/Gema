@@ -5,7 +5,7 @@
                 <div class="column">
                     <h1>footer content</h1>
                     <p style="padding-right: 20px">Website ini dibuat untuk memenuhi nilai Ujian Akhir Semester 4 dari kelar Pemograman Website
-                    di kelas IF430-F dan IF430-FL. Website ini dibuat oleh satu kelompok yang terdiri
+                    di kelas IF430-F. Website ini dibuat oleh satu kelompok yang terdiri
                     dari 4 orang yaitu: Najim Rizky, Bonventura Sajaya, Filbert Khouwira, Muhammad Farhan</p>
                 </div>
                 <div class="column">
@@ -24,7 +24,7 @@
                                 <h1>Address</h1>
                                 <div class="ui list">
                                     <div class="item"><i class="building icon"></i>Universitas Multimedia Nusantara</div>
-                                    <div class="item"><i class="envelope outline icon"></i>filbert.khouwira@gmail.com</div>
+                                    <div class="item"><i class="envelope outline icon"></i>burung@gmail.com</div>
                                     <div class="item"><i class="phone icon"></i>0812-1313-1121</div>
                                 </div>
                             </div>
