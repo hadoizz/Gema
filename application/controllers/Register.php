@@ -7,6 +7,7 @@ class Register extends CI_Controller{
         session_start();
         $this->load->model('user');
         $this->load->model('transaction');
+        if(isset($_SESSION['role'])) redirect(base_url());
 	}
     
     public function index(){

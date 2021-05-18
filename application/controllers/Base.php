@@ -28,6 +28,8 @@ class Base extends CI_Controller{
         else $rawCart['items'] = array();
 
         $cart['cart'] = $this->load->view('components/cartModal',$rawCart, TRUE);
+
+        $data['alert'] = $this->load->view('components/alert', NULL, TRUE);
         $data['nav'] = $this->load->view('components/nav',$cart, TRUE);
         $data['footer'] = $this->load->view('components/footer',NULL, TRUE);
         $data['style'] = $this->load->view('include/ui',NULL,TRUE);

@@ -25,5 +25,10 @@ class Customer extends CI_Controller{
         }
     }
 
+    public function deleteCart($id){
+        $this->transaction->deleteOneCart($id, $_SESSION['email']);
+        redirect(base_url('?delete=true'));
+    }
+
 }
 ?>
