@@ -30,5 +30,18 @@ class Transaction extends CI_Model{
 	public function deleteOneCart($id, $email){
 		$query = $this->db->query("DELETE FROM cart WHERE Id_Barang = '$id' AND Email = '$email'");
 	}
+
+	public function deleteAllCart($email){
+		$query = $this->db->query("DELETE FROM cart WHERE Email = '$email'");
+	}
+
+	public function getLastOrder(){
+        $last_row = $this->db->order_by('Id_Order',"desc")->limit(1)->get('order')->row()->Id;
+        return $last_row;
+    }
+
+	public function insertOrder($idOrder, $idBarang, $email, $day){
+		$query = $this->db->query("INSERT INTO `order` (Id_Order, Id_Barang, Email, Status, Lama_Sewa) VALUES ('$idOrder', '$idBarang', '$email', '1', $day)");
+	}
 }
 ?>

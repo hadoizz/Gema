@@ -31,14 +31,25 @@ class Customer extends CI_Controller{
     }
 
     public function confirmOrder(){
-        if(isset($_SESSION['email'])) $data['items'] = $this->transaction->getCartValue($_SESSION['email']);
+        $data['items'] = $this->transaction->getCartValue($_SESSION['email']);
         $data['style'] = $this->load->view('include/ui', NULL, TRUE);
 
         $this->load->view('pages/confirmOrder',$data);
     }
 
     public function submitOrder() {
-        
+        $lastIdOrder = $this->transaction->getLastOrder() + 1;
+        $cart['items'] = $this->transaction->getCartValue($_SESSION['email']);
+        $day = $this->input->post('day');
+
+        // Insert satu per satu
+        foreach($cart['items'] as $item){
+            $this->transaction->insertOrder($lastIdOrder, $item['Id'], $_SESSION['email'], $day);
+        }
+
+        //Kosongin cart
+        $this->transaction->deleteAllCart($_SESSION['email']);
+        redirect(base_url('?order=true'));
     }
 }
 ?>

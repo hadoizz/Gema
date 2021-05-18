@@ -17,11 +17,19 @@
         </div>
     <?php } ?>
 <?php }else if(isset($_GET['delete'])) { ?> 
-        <div class='ui yellow message'>
+        <div class='ui red message'>
             <i class="close icon"></i>
             <div class='header'>
                 Success
             </div>
             <p>Item removed from cart</p>
+        </div>
+<?php }else if(isset($_GET['order'])) {?>
+        <div class='ui green message'>
+            <i class="close icon"></i>
+            <div class='header'>
+                Success
+            </div>
+            <p>Order created successfully</p>
         </div>
 <?php } ?>
