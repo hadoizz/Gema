@@ -9,9 +9,8 @@ class Admin extends CI_Controller{
         $this->load->model('games');
 
         if(isset($_SESSION['role'])){
-            if($_SESSION['role'] == 'admin'){
-                $this->crudItem();
-            } else {
+            if($_SESSION['role'] != 'admin'){
+                // $this->crudItem();
                 redirect(base_url('index.php/base/errorPage'));
             }
         }else{
@@ -22,7 +21,7 @@ class Admin extends CI_Controller{
     public function index(){
         // if(isset($_SESSION['role'])){
             // if($_SESSION['role'] == 'admin'){
-                //$this->crudItem();
+                $this->crudItem();
             // }
         // }else{
             // $this->load->view('errors/index.html');
@@ -87,6 +86,22 @@ class Admin extends CI_Controller{
 
         $post_array['Id'] = $newId;
         return $post_array;
+    }
+
+    public function Order() {
+        $crud = new grocery_CRUD();
+        $crud->set_table('order')
+             ->columns('Id_Order', 'Email', 'Status', 'Lama_Sewa')
+             ->set_relation('Status', 'status', 'Deskripsi')
+             ->unset_add()
+             ->unset_delete();
+
+        $output = $crud->render();
+        $data['crud'] = get_object_vars($output);
+        $data['groceryCRUD'] = $this->load->view('include/grocerycrud', $data, TRUE);
+
+        $data['style'] = $this->load->view('include/ui',NULL,TRUE);
+        $this->load->view('admin/order', $data);
     }
 }
 ?>
