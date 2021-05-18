@@ -26,17 +26,37 @@
                 </div>
             </div>
             <div class="ui divider"></div>
-        <?php }?>
+            <?php }?>
         <?php }?>
     </div>
     <div class="actions">
         <div class="ui grid left aligned">
             <div class="eight wide column">
-                <h3>Total: IDR <?= number_format($total) ?></h3>
+                <div class="ui labeled input">
+                    <div class="ui label">
+                    IDR <span id=""><?= number_format($total) ?></span>  ×
+                    </div>
+                    <input type="number" value="" id="hari" oninput="calculateTotal(<?= $total?>)" placeholder="day">
+                    <div class="ui label" id="equal">= IDR 0</div>
+                </div>
             </div>
             <div class="eight wide column right aligned">
-                <a href="#" class="ui green button <?php if($total == 0) echo "disabled"; ?>">Checkout</a>
+                <a href="#" id="checkoutBtn" class="ui green button disabled">Checkout</a>
             </div>
         </div>
     </div>
 </div>
+<?php //if($total == 0) echo "disabled"; ?>
+<script>
+    function calculateTotal(total){
+        var hari = document.getElementById('hari').value;
+        var hasil = (total*hari).toLocaleString();
+        document.getElementById('equal').innerHTML = "= IDR "+ hasil;
+        var checkout = document.getElementById('checkoutBtn');
+        if(hari!=0){
+            checkout.classList.remove('disabled')
+        }else{
+            checkout.classList.add('disabled')
+        }
+    }
+</script>

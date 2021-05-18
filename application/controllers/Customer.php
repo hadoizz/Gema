@@ -30,5 +30,8 @@ class Customer extends CI_Controller{
         redirect(base_url('?delete=true'));
     }
 
+    public function order(){
+        
+    }
 }
 ?>
