@@ -7,7 +7,6 @@ class Login extends CI_Controller{
         session_start();
         $this->load->model('user');
         $this->load->model('transaction');
-        if(isset($_SESSION['role'])) redirect(base_url());
         $this->load->helper('captcha');
 	}
     
