@@ -36,12 +36,16 @@ class Transaction extends CI_Model{
 	}
 
 	public function getLastOrder(){
-        $last_row = $this->db->order_by('Id_Order',"desc")->limit(1)->get('order')->row()->Id;
+        $last_row = $this->db->order_by('Id_Order',"desc")->limit(1)->get('order')->row()->Id_Order;
         return $last_row;
     }
 
-	public function insertOrder($idOrder, $idBarang, $email, $day){
-		$query = $this->db->query("INSERT INTO `order` (Id_Order, Id_Barang, Email, Status, Lama_Sewa) VALUES ('$idOrder', '$idBarang', '$email', '1', $day)");
+	public function insertOrder($idOrder, $email, $day){
+		$query = $this->db->query("INSERT INTO `order` (Id_Order, Email, Status, Lama_Sewa) VALUES ('$idOrder', '$email', '1', $day)");
+	}
+
+	public function insertDetailOrder($idOrder, $idBarang) {
+		$query = $this->db->query("INSERT INTO `detail_order` (Id_Order, Id_Barang) VALUES ('$idOrder', '$idBarang')");
 	}
 }
 ?>

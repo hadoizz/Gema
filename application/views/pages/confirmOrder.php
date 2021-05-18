@@ -21,7 +21,7 @@
             <form method="POST" action="<?= base_url('index.php/Customer/submitOrder') ?>">
                 <input type="number" name="day" style="display: none;" id="inputDay">
                 <div class="actions">
-                    <button class="ui button" id="closeModal">No</button>
+                    <div class="ui button" id="closeModal">No</div>
                     <button class="ui button" type="submit">Yes</button>
                 </div>
             </form>

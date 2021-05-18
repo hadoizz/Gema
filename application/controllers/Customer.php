@@ -43,8 +43,11 @@ class Customer extends CI_Controller{
         $day = $this->input->post('day');
 
         // Insert satu per satu
+        
+        $this->transaction->insertOrder($lastIdOrder, $_SESSION['email'], $day);
+        
         foreach($cart['items'] as $item){
-            $this->transaction->insertOrder($lastIdOrder, $item['Id'], $_SESSION['email'], $day);
+            $this->transaction->insertDetailOrder($lastIdOrder, $item['Id']);
         }
 
         //Kosongin cart
