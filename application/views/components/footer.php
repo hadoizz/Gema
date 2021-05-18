@@ -6,7 +6,7 @@
                     <h1>footer content</h1>
                     <p style="padding-right: 20px">Website ini dibuat untuk memenuhi nilai Ujian Akhir Semester 4 dari kelar Pemograman Website
                     di kelas IF430-F. Website ini dibuat oleh satu kelompok yang terdiri
-                    dari 4 orang yaitu: Najim Rizky, Bonventura Sajaya, Filbert Khouwira, Muhammad Farhan</p>
+                    dari 4 orang yaitu: Najim Rizky, Bonaventura Sanjaya, Filbert Khouwira, Muhammad Farhan</p>
                 </div>
                 <div class="column">
                     <div class="ui grid">

@@ -12,17 +12,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
     <?= $style ?>
-    <style>
-        #poster{
-            transition: 0.3s;
-            box-shadow: 5px 10px;
-            box-shadow: 0px 10px 20px 0 rgba(0, 0, 0, 1);
-        }
-        #poster:hover{ 
-            transform: scale(1.02);
-            box-shadow: 0px 5px 20px 0 rgba(0, 0, 0, 1);
-        }
-    </style>
+    
 </head>
 <body>
     <?= $nav ?>

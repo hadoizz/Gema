@@ -62,7 +62,7 @@
                         <h1 class="ui header inverted"><?= $game[0]['Nama_Barang']?></h1>
                     </div><br>
                     <div class="row">
-                        <a class="ui tag red label"><?= $kategori[0]['Deskripsi']?></a>
+                        <a href="<?= base_url('index.php/Base/showBy/').$kategori[0]['Id'] ?>" class="ui tag red label"><?= $kategori[0]['Deskripsi']?></a>
                     </div><br>
                     <div class="row">
                         <p style="font-size: 18px;" class="inverted  "><?= $game[0]['Deskripsi']?></p>

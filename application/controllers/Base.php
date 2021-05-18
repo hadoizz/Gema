@@ -59,5 +59,22 @@ class Base extends CI_Controller{
     public function errorPage(){
         $this->load->view('errors/index.html');
     }
+
+    public function showBy($id) {
+        $games['games'] = $this->games->getGameCategory($id);
+        if(isset($_SESSION['email'])) $rawCart['items'] = $this->transaction->getCartValue($_SESSION['email']);
+        else $rawCart['items'] = array();
+
+        $cart['cart'] = $this->load->view('components/cartModal',$rawCart, TRUE);
+
+        $data['alert'] = $this->load->view('components/alert', NULL, TRUE);
+        $data['nav'] = $this->load->view('components/nav',$cart, TRUE);
+        $data['footer'] = $this->load->view('components/footer',NULL, TRUE);
+        $data['style'] = $this->load->view('include/ui',NULL,TRUE);
+        $data['kategori'] = $this->games->getKategori($id);
+        $data['showGames'] = $this->load->view('components/showGames',$games, TRUE);
+
+        $this->load->view('pages/showBy',$data);
+    }
 }
 ?>

@@ -8,12 +8,12 @@
                     <img src="<?= base_url('/assets/img/logo1.png') ?>">
                 </div>
             </a>
-            <a class="item">PC</a>
-            <a class="item">PS2</a>
-            <a class="item">PS3</a>
-            <a class="item">PS4</a>
-            <a class="item">PS5</a>
-            <a class="item">XBOX</a>
+            <a href="<?= base_url('index.php/Base/showBy/1') ?>" class="item">PC</a>
+            <a href="<?= base_url('index.php/Base/showBy/2') ?>" class="item">XBOX</a>
+            <a href="<?= base_url('index.php/Base/showBy/3') ?>" class="item">PS5</a>
+            <a href="<?= base_url('index.php/Base/showBy/4') ?>" class="item">PS4</a>
+            <a href="<?= base_url('index.php/Base/showBy/5') ?>" class="item">PS3</a>
+            <a href="<?= base_url('index.php/Base/showBy/6') ?>" class="item">PS2</a>
             
             <div class="right menu">
                 <a class="item">About Us</a>
