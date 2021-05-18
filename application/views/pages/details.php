@@ -36,6 +36,7 @@
     margin-top: 100px;
     display: flex;
     box-shadow: 0px 10px 20px 0 rgba(0, 0, 0, 1);
+    display: block;
 }
 
 </style>

@@ -7,6 +7,16 @@ class Base extends CI_Controller{
         session_start();
         $this->load->model('games');
         $this->load->model('transaction');
+
+        if(isset($_SESSION['role'])){
+            if($_SESSION['role'] == 'admin'){
+                redirect(base_url("index.php/admin"));
+            } else {
+                $this->home();
+            }
+        }else{
+            $this->home();
+        }
 	}
     
     public function index(){
