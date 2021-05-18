@@ -46,8 +46,9 @@
                 </div>
             <?php } ?>
         <?php } ?>
-        <div >
-            <div class="fotorama" style="padding-left: 50px; border-radius: 10px" data-loop="true" data-autoplay="true" 
+        <div class="ui center aligned grid">
+        <div class="fourteen wide column">
+            <div class="fotorama" style="border-radius: 10px" data-loop="true" data-autoplay="true" 
                 data-width="100%" data-ratio="400/200" data-minwidth="400" 
                 data-maxwidth="1000" data-minheight="300" data-maxheight="100%">
                 <img src= <?= base_url('/assets/img/motogp.jpg')?>>
@@ -57,7 +58,6 @@
                 <img src= <?= base_url('/assets/img/cyberpunk44.jpg')?>>
             </div>
         </div>
-        <div class="ui center aligned grid">
         <?php 
             echo $showGames; 
         ?>
