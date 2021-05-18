@@ -45,6 +45,14 @@
                     <p>This item is already in the cart</p>
                 </div>
             <?php } ?>
+        <?php }else if(isset($_GET['delete'])) { ?> 
+                <div class='ui yellow message'>
+                    <i class="close icon"></i>
+                    <div class='header'>
+                        Success
+                    </div>
+                    <p>Item removed from cart</p>
+                </div>
         <?php } ?>
         <div class="ui center aligned grid">
         <div class="fourteen wide column">

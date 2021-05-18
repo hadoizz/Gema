@@ -26,5 +26,9 @@ class Transaction extends CI_Model{
 		$query = $this->db->query("SELECT Id, Nama_Barang, Harga, Gambar FROM barang WHERE Id in (SELECT Id_Barang FROM cart WHERE Email = '$email')");
 		return $query->result_array();
 	}
+
+	public function deleteOneCart($id, $email){
+		$query = $this->db->query("DELETE FROM cart WHERE Id_Barang = '$id' AND Email = '$email'");
+	}
 }
 ?>
