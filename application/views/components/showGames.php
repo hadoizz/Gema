@@ -12,13 +12,13 @@
                 <h5 class="ui header" style="color: white; height: 50px; font-weight: normal;"><?= $item['Nama_Barang'] ?></h5>
                 <div class="ui divider"></div>
                 <div class="description">
-                    <h4 style="color: white;">IDR <?= number_format($item['Harga']) ?>.-/day</h4>    
+                    <h4 style="color: white;">IDR <?= number_format($item['Harga']) ?>/day</h4>    
                 </div>
             </div>
             <div class="extra content">
                 <div class="right floated author">
-                    <a href="<?= base_url('index.php/base/details/'.$item['Id']) ?>" class="ui green icon button"><i class="ellipsis horizontal icon"></i></a>
-                    <a href="<?= base_url('index.php/customer/addToCart/'.$item['Id'])?>" class="ui teal icon button"><i class="cart plus icon"></i></a>
+                    <a href="<?= base_url('index.php/base/details/'.$item['Id']) ?>" class="ui green icon button" data-tooltip="See details"><i class="ellipsis horizontal icon"></i></a>
+                    <a href="<?= base_url('index.php/customer/addToCart/'.$item['Id'])?>" class="ui teal icon button" data-tooltip="Add to cart"><i class="cart plus icon"></i></a>
                 </div>
             </div>
         </div>

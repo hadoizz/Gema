@@ -15,9 +15,14 @@
                         <img id="poster" src="<?= base_url('assets/uploads/poster/'.$item['Gambar']) ?>">
                     </div>
                 </div>
-                <div class="twelve wide mobile twelve wide tablet fourteen wide computer column">
+                <div class="eight wide mobile eight wide tablet twelve wide computer column">
                     <h5><?= $item['Nama_Barang'] ?></h5>
                     <p>IDR <?= number_format($item['Harga']) ?></p>
+                </div>
+                <div class="four wide mobile four wide tablet two wide computer column middle aligned content">
+                    <a href="<?= base_url('index.php/customer/deleteCart/'.$item['Id'])?>" class="ui icon red button" data-tooltip="Remove from cart" data-position="left center">
+                        <i class="trash icon"></i>
+                    </a>
                 </div>
             </div>
             <div class="ui divider"></div>
