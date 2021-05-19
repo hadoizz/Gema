@@ -56,16 +56,30 @@
                     <img src="<?= base_url('/assets/img/logo1.png') ?>">
                 </div>
             </a>
+            <?php if(isset($_SESSION['role'])){?>
+            <div class="right menu">
+                <a class="item" id="cart2">
+                    <div class="ui teal button"><i class="shopping cart icon"></i><?= $_SESSION['cart'] ?></div>
+                </a>
+            </div>
+            <?php } ?>
             <div class="ui icon top right pointing dropdown item"><i class="user icon"></i>
                 <div class="menu">
                     <?php if(!isset($_SESSION['role'])){ ?>    
-                        <a href="<?= base_url('index.php/Login') ?>" style="color: black;">Login</a>
+                        <div class="item" >
+                            <a href="<?= base_url('index.php/Login') ?>" style="color: black;">Login</a>
+                        </div>
                     <?php }else{ ?>
-                        <a href="<?= base_url('index.php/Customer/orderHistory') ?>" style="color: black;">Order history</a>
-                        <a href="<?= base_url('index.php/Login/logOut') ?>" style="color: black;">Logout</a>
+                        <div class="item" >
+                            <a href="<?= base_url('index.php/Customer/orderHistory') ?>" style="color: black;">Order history</a>
+                        </div>
+                        <div class="item" >
+                            <a href="<?= base_url('index.php/Login/logOut') ?>" style="color: black;">Logout</a>
+                        </div>
                     <?php }?>
                 </div>
             </div>
+            
             <div class="ui vertical accordion borderless fluid menu" style="background-color: #393e46;">
                 <a class="item">PC</a>
                 <a class="item">PS2</a>
@@ -85,14 +99,12 @@
 } ?>
 
 <script>
-    $(document).ready(function() {
-        $('.ui.vertical.menu').toggle("close");
-        $('.ui.dropdown').dropdown();
-        $('.ui.toggle.button').click(function() {
-            $('.ui.vertical.menu').toggle("250", "linear")
-        });
+$(document).ready(function() {
+    $('.ui.vertical.menu').toggle("close");
+    $('.ui.dropdown').dropdown();
+    $('.ui.toggle.button').click(function() {
+        $('.ui.vertical.menu').toggle("250", "linear")
     });
-    $('#cart').on('click', function() {
-        $('.ui.modal').modal('show');
-    });
+});
 </script>
+

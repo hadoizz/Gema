@@ -48,22 +48,12 @@
     </div>
 </div>
 <?php //if($total == 0) echo "disabled"; ?>
-<!-- <script>
-    function calculateTotal(total){
-        var hari = document.getElementById('hari').value;
-        
-        var checkout = document.getElementById('checkoutBtn');
-        if(hari > 0){
-            var hasil = (total*hari).toLocaleString();
-            document.getElementById('equal').innerHTML = "= IDR "+ hasil;
-            checkout.classList.remove('disabled')
-        }else if(hari < 0){
-            document.getElementById('equal').innerHTML = "= IDR 0";
-            checkout.classList.add('disabled')
-            document.getElementById('hari').value = 0
-        }else if(hari == 0){
-            document.getElementById('equal').innerHTML = "= IDR 0";
-            checkout.classList.add('disabled')
-        }
-    }
-</script> -->
+<script>
+    
+    $('#cart').on('click', function() {
+        $('.ui.modal').modal('show');
+    });
+    $('#cart2').on('click', function() {
+        $('.ui.modal').modal('show');
+    });
+</script>
