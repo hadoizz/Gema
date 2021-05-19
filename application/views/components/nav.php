@@ -16,7 +16,7 @@
             <a href="<?= base_url('index.php/Base/showBy/6') ?>" class="item">PS2</a>
             
             <div class="right menu">
-                <a class="item">About Us</a>
+                <a href="<?php echo base_url('index.php/base/aboutUs') ?>" class="item">About Us</a>
                 <?php if(isset($_SESSION['role'])){?>
                     <a class="item" id="cart">
                         <div class="ui teal button"><i class="shopping cart icon"></i><?= $_SESSION['cart'] ?></div>
