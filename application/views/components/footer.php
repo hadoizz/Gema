@@ -6,7 +6,7 @@
                     <h1>footer content</h1>
                     <p style="padding-right: 20px">Website ini dibuat untuk memenuhi nilai Ujian Akhir Semester 4 dari kelar Pemograman Website
                     di kelas IF430-F. Website ini dibuat oleh satu kelompok yang terdiri
-                    dari 4 orang yaitu: Najim Rizky, Bonaventura Sanjaya, Filbert Khouwira, Muhammad Farhan</p>
+                    dari 4 orang yaitu: Najim Rizky, Bonaventura Sanjaya, Filbert Khouwira, Mohamad Farhan</p>
                 </div>
                 <div class="column">
                     <div class="ui grid">
@@ -34,18 +34,12 @@
             </div>
             <div class="sixteen wide column center aligned">Our partners</div>
             <div class="sixteen wide column center aligned">
-                <div class="ui grid">
+                <div class="ui grid ">
                     <div class="fourteen column row center aligned">
-                        <img class="ui fluid image column" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Visa.svg/1200px-Visa.svg.png" alt="">
-                        <img class="ui fluid image column" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Visa.svg/1200px-Visa.svg.png" alt="">
-                        <img class="ui fluid image column" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Visa.svg/1200px-Visa.svg.png" alt="">
-                        <img class="ui fluid image column" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Visa.svg/1200px-Visa.svg.png" alt="">
-                        <img class="ui fluid image column" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Visa.svg/1200px-Visa.svg.png" alt="">
-                        <img class="ui fluid image column" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Visa.svg/1200px-Visa.svg.png" alt="">
-                        <img class="ui fluid image column" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Visa.svg/1200px-Visa.svg.png" alt="">
-                        <img class="ui fluid image column" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Visa.svg/1200px-Visa.svg.png" alt="">
-                        <img class="ui fluid image column" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Visa.svg/1200px-Visa.svg.png" alt="">
-                        <img class="ui fluid image column" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Visa.svg/1200px-Visa.svg.png" alt="">
+                        <img class="ui fluid image column" src="<?= base_url('assets/img/visalogo.png') ?>">
+                        <img class="ui fluid image column" src="<?= base_url('assets/img/mastercard.png') ?>">
+                        <img class="ui fluid image column" src="<?= base_url('assets/img/gopay.png') ?>">
+                        <img class="ui fluid image column" src="<?= base_url('assets/img/paypal.png') ?>" alt="">
                         <img class="ui fluid image column" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Visa.svg/1200px-Visa.svg.png" alt="">
                         <img class="ui fluid image column" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Visa.svg/1200px-Visa.svg.png" alt="">
                         <img class="ui fluid image column" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Visa.svg/1200px-Visa.svg.png" alt="">

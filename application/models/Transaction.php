@@ -68,5 +68,16 @@ class Transaction extends CI_Model{
 	public function changeOrderStatus($id, $email){
 		$query = $this->db->query("UPDATE `order` set `Status` = '3' WHERE Email = '$email' AND Id_Order = '$id'");
 	}
+	public function minusStock($id) {
+		$this->db->set('Stock', 'Stock-1');
+		$this->db->where('Id', $id);
+		$this->db->update('barang');
+	}
+
+	public function plusStock($id) {
+		$this->db->set('Stock', 'Stock+1');
+		$this->db->where('Id', $id);
+		$this->db->update('barang');
+	}
 }
 ?>
