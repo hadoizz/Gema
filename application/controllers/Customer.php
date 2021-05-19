@@ -48,6 +48,7 @@ class Customer extends CI_Controller{
         
         foreach($cart['items'] as $item){
             $this->transaction->insertDetailOrder($lastIdOrder, $item['Id']);
+            $this->transaction->minusStock($item['Id']);
         }
 
         //Kosongin cart

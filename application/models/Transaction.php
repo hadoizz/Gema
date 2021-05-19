@@ -52,5 +52,17 @@ class Transaction extends CI_Model{
 		$query = $this->db->query("SELECT * FROM `order` WHERE Email = '$email'");
 		return $query->result_array();
 	}
+
+	public function minusStock($id) {
+		$this->db->set('Stock', 'Stock-1');
+		$this->db->where('Id', $id);
+		$this->db->update('barang');
+	}
+
+	public function plusStock($id) {
+		$this->db->set('Stock', 'Stock+1');
+		$this->db->where('Id', $id);
+		$this->db->update('barang');
+	}
 }
 ?>
