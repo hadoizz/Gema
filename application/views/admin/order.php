@@ -10,9 +10,15 @@
 
 </head>
 <body>
-    <h1>CRUD Games</h1>
+    <h1 style="color: white;">Admin</h1>
     <a class="ui button" href="<?= base_url('index.php/login/logOut') ?>">Log Out</a>
     <a class="ui button" href="<?= base_url('index.php/admin/') ?>">Barang</a>
     <?php echo $crud['output']; ?>
+
+    <script>
+    $(document).ready(function() {
+        $("table td:contains('Selesai')").closest("tr").find("a .edit-icon").remove();
+    });
+    </script>
 </body>
 </html>

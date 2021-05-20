@@ -10,7 +10,7 @@
 
 </head>
 <body>
-    <h1>CRUD Games</h1>
+    <h1>Admin</h1>
     <a class="ui button" href="<?= base_url('index.php/login/logOut') ?>">Log Out</a>
     <a class="ui button" href="<?= base_url('index.php/admin/Order') ?>">ORDER</a>
     <?php echo $crud['output']; ?>
