@@ -13,7 +13,7 @@
             <div class='header'>
                 Warning
             </div>
-            <p>This item is already in the cart</p>
+            <p>This item is already in the cart / Stock is not available</p>
         </div>
     <?php } ?>
 <?php }else if(isset($_GET['delete'])) { ?> 

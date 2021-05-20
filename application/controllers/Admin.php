@@ -7,6 +7,7 @@ class Admin extends CI_Controller{
         session_start();
         $this->load->library('grocery_CRUD');
         $this->load->model('games');
+        $this->load->model('transaction');
 
         if(isset($_SESSION['role'])){
             if($_SESSION['role'] != 'admin'){
@@ -31,8 +32,8 @@ class Admin extends CI_Controller{
     public function crudItem(){
         $crud = new grocery_CRUD();
         $crud->set_table('barang')
-             ->columns('Id','Nama_Barang','Harga','Deskripsi','Gambar','Kategori')
-             ->fields('Id','Nama_Barang','Harga','Deskripsi','Gambar','Kategori')
+             ->columns('Id','Nama_Barang','Harga','Deskripsi','Gambar','Kategori','Stock')
+             ->fields('Id','Nama_Barang','Harga','Deskripsi','Gambar','Kategori','Stock')
              ->set_relation('Kategori', 'kategori', 'deskripsi')
              ->set_field_upload('Gambar', 'assets/uploads/poster')
              ->callback_edit_field('Deskripsi', array($this, 'edit_description'))
@@ -97,7 +98,8 @@ class Admin extends CI_Controller{
              ->unset_delete()
              ->callback_edit_field('Status', array($this, 'edit_status'))
              ->callback_edit_field('Lama_Sewa', array($this, 'edit_lamaSewa'))
-             ->callback_edit_field('Email', array($this, 'edit_email'));
+             ->callback_edit_field('Email', array($this, 'edit_email'))
+             ->callback_after_update(array($this, 'plus_stock_after_selesai'));;
 
         $output = $crud->render();
         $data['crud'] = get_object_vars($output);
@@ -133,6 +135,18 @@ class Admin extends CI_Controller{
 
     function edit_email($value) {
         return "<input value='$value' disabled/>";
+    }
+
+    function plus_stock_after_selesai($post_array, $primary_key) {
+        if($post_array['Status'] == 3) {
+            
+        } else if($post_array['Status'] == 4) {
+            $idOrder = $primary_key;
+            $list['list'] = $this->transaction->getSpesificDetailOrder($idOrder);
+            foreach($list['list'] as $data){
+                $this->transaction->plusStock($data['Id_Barang']);
+            }
+        }
     }
 }
 ?>

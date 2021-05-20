@@ -6,6 +6,7 @@ class Customer extends CI_Controller{
 		parent::__construct();
         session_start();
         $this->load->model('transaction');
+        $this->load->model('games');
 
         if(!isset($_SESSION['role'])){
             redirect(base_url('index.php/login'));
@@ -17,10 +18,15 @@ class Customer extends CI_Controller{
 	}
 
     public function addToCart($id){
-        if($this->transaction->cekCart($id, $_SESSION['email']) == 0){
-            $this->transaction->insertCart($id, $_SESSION['email']);
-            redirect(base_url('?success=true'));
-        }else{
+        $stock = $this->games->getGame($id);
+        if($stock[0]['Stock'] > 0){
+            if($this->transaction->cekCart($id, $_SESSION['email']) == 0){
+                $this->transaction->insertCart($id, $_SESSION['email']);
+                redirect(base_url('?success=true'));
+            }else{
+                redirect(base_url('?success=false'));
+            }
+        } else {
             redirect(base_url('?success=false'));
         }
     }

@@ -13,6 +13,7 @@
                 <div class="ui divider"></div>
                 <div class="description">
                     <h4 style="color: white;">IDR <?= number_format($item['Harga']) ?>/day</h4>    
+                    <h5 style="color: white; text-align:right">Stock : <?= $item['Stock'] ?> </h5>
                 </div>
             </div>
             <div class="extra content">

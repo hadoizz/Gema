@@ -20,7 +20,7 @@
 
 <body>
     <?= $nav ?>
-    <div class="ui container" id="main">
+    <div class="ui container" id="main" style="margin-bottom: 50px;">
         <?php
         foreach ($orders as $order) {
             $total = 0;
@@ -71,7 +71,7 @@
                                 <div class="description">Pesanan diambil kembali</div>
                             </div>
                         </div>
-                        <div class="step <?php if($order['Status'] == 3) echo "active"; if($order['Status'] >4) echo "completed"; ?>">
+                        <div class="<?php if($order['Status'] == 3) echo "active"; if($order['Status'] >3) echo "completed"; ?> step" >
                             <div class="content">
                                 <div class="title">Selesai</div>
                                 <div class="description">Pesanan Selesai</div>
@@ -87,6 +87,7 @@
             </div>
         <?php } ?>
     </div>
+    <?php echo $footer ?>
 </body>
 
 </html>
