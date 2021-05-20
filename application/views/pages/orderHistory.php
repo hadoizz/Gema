@@ -48,7 +48,7 @@
                 }
                 ?>
                 <div class='ui divider'></div>
-                <h3 style="text-align: center;">Total: IDR <?= number_format($total) ?> </h3>
+                <h3 style="text-align: center;">Total: IDR <?= number_format($total)?> x <?= $order['Lama_Sewa'] ?> Hari  =  <strong>IDR <?= number_format($total*$order['Lama_Sewa'])?></strong>  </h3>
                 <div class='ui divider'></div>
                 <div class="ui centered column grid">
                     <div class="sixteen wide column center aligned">Status:</div>
