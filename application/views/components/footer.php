@@ -34,16 +34,17 @@
             </div>
             <div class="sixteen wide column center aligned">Our partners</div>
             <div class="sixteen wide column center aligned">
-                <div class="ui grid ">
-                    <div class="fourteen column row center aligned">
+                <div class="ui grid centered column">
+                    <div class="column row ">
                         <img class="ui fluid image column" src="<?= base_url('assets/img/visalogo.png') ?>">
                         <img class="ui fluid image column" src="<?= base_url('assets/img/mastercard.png') ?>">
                         <img class="ui fluid image column" src="<?= base_url('assets/img/gopay.png') ?>">
                         <img class="ui fluid image column" src="<?= base_url('assets/img/paypal.png') ?>" alt="">
+                        <img class="ui fluid image column" src="https://getlogovector.com/wp-content/uploads/2019/08/gojek-logo-vector.png" alt="">
+                        <img class="ui fluid image column" src="https://cdn.freebiesupply.com/logos/large/2x/grab-logo-png-transparent.png" alt="">
+                        <img class="ui fluid image column" src="https://seeklogo.com/images/L/link-aja-logo-F029ED0939-seeklogo.com.png" alt="">
                         <img class="ui fluid image column" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Visa.svg/1200px-Visa.svg.png" alt="">
-                        <img class="ui fluid image column" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Visa.svg/1200px-Visa.svg.png" alt="">
-                        <img class="ui fluid image column" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Visa.svg/1200px-Visa.svg.png" alt="">
-                        <img class="ui fluid image column" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Visa.svg/1200px-Visa.svg.png" alt="">
+                        <img class="ui fluid image column" src="https://logos-download.com/wp-content/uploads/2016/06/Bank_Mandiri_logo_white_bg.png">
                     </div>
                 </div>
             </div>
