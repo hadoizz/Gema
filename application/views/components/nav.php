@@ -8,27 +8,33 @@
                     <img src="<?= base_url('/assets/img/logo1.png') ?>">
                 </div>
             </a>
-            <a href="<?= base_url('index.php/Base/showBy/1') ?>" class="item">PC</a>
-            <a href="<?= base_url('index.php/Base/showBy/2') ?>" class="item">XBOX</a>
-            <a href="<?= base_url('index.php/Base/showBy/3') ?>" class="item">PS5</a>
-            <a href="<?= base_url('index.php/Base/showBy/4') ?>" class="item">PS4</a>
-            <a href="<?= base_url('index.php/Base/showBy/5') ?>" class="item">PS3</a>
-            <a href="<?= base_url('index.php/Base/showBy/6') ?>" class="item">PS2</a>
+            <a href="<?= base_url('index.php/Base/showBy/1') ?>" class="item <?php if(current_url() == base_url('index.php/Base/showBy/1')) echo "active";?>">PC</a>
+            <a href="<?= base_url('index.php/Base/showBy/2') ?>" class="item <?php if(current_url() == base_url('index.php/Base/showBy/2')) echo "active";?>">XBOX</a>
+            <a href="<?= base_url('index.php/Base/showBy/3') ?>" class="item <?php if(current_url() == base_url('index.php/Base/showBy/3')) echo "active";?>">PS5</a>
+            <a href="<?= base_url('index.php/Base/showBy/4') ?>" class="item <?php if(current_url() == base_url('index.php/Base/showBy/4')) echo "active";?>">PS4</a>
+            <a href="<?= base_url('index.php/Base/showBy/5') ?>" class="item <?php if(current_url() == base_url('index.php/Base/showBy/5')) echo "active";?>">PS3</a>
+            <a href="<?= base_url('index.php/Base/showBy/6') ?>" class="item <?php if(current_url() == base_url('index.php/Base/showBy/6')) echo "active";?>">PS2</a>
+
+            
             
             <div class="right menu">
-                <a href="<?php echo base_url('index.php/base/aboutUs') ?>" class="item">About Us</a>
+                <a href="<?php echo base_url('index.php/base/aboutUs') ?>" class="item <?php if(current_url() == base_url('index.php/base/aboutUs')) echo "active";?>">About Us</a>
                 <?php if(isset($_SESSION['role'])){?>
                     <a class="item" id="cart">
                         <div class="ui teal button"><i class="shopping cart icon"></i><?= $_SESSION['cart'] ?></div>
                     </a>
                 <?php } ?>
-                <div class="ui icon top right pointing dropdown item"><i class="user icon"></i>
+                
+                <div class="ui icon top right dropdown item" ><i class="user icon"></i> 
                     <div class="menu">
                         <?php if(!isset($_SESSION['role'])){ ?>    
                             <div class="item" >
                                 <a href="<?= base_url('index.php/Login') ?>" style="color: black;">Login</a>
                             </div>
                         <?php }else{ ?>
+                            <div class="item active">
+                                <?= "Hi, ".$_SESSION['email'] ?>
+                            </div>
                             <div class="item" >
                                 <a href="<?= base_url('index.php/Customer/orderHistory') ?>" style="color: black;">Order history</a>
                             </div>
@@ -70,6 +76,9 @@
                             <a href="<?= base_url('index.php/Login') ?>" style="color: black;">Login</a>
                         </div>
                     <?php }else{ ?>
+                        <div class="item active">
+                                <?= "Hi, ".$_SESSION['email'] ?>
+                            </div>
                         <div class="item" >
                             <a href="<?= base_url('index.php/Customer/orderHistory') ?>" style="color: black;">Order history</a>
                         </div>

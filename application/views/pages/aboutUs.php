@@ -72,7 +72,7 @@
                 </div>
             </div>
 
-            <div class="card">
+            <div class="inverted card">
                 <div class="image">
                     <img src="<?= base_url('assets/img/filbert.jpg') ?>">
                 </div>
