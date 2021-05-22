@@ -39,6 +39,30 @@
     display: block;
 }
 
+@media only screen and (max-width: 767px){
+    .ui.container {
+        margin-top: 300px;
+    }
+}
+
+@media only screen and (max-width: 450px){
+    .ui.container {
+        margin-top: 500px;
+    }
+}
+
+@media only screen and (max-width: 360px){
+    .ui.container {
+        margin-top: 600px;
+    }
+}
+
+@media only screen and (max-width: 320px){
+    .ui.container {
+        margin-top: 800px;
+    }
+}
+
 </style>
 <head>
     <meta charset="UTF-8">
