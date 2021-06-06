@@ -21,7 +21,9 @@
 <body>
     <?= $nav ?>
     <div class="ui container" id="main" style="margin-bottom: 50px;">
-        <?php
+        <?php if(count($orders) == 0){?>
+            <h1>Nothing found in your history</h1>
+        <?php }else{
         foreach ($orders as $order) {
             $total = 0;
         ?>
@@ -85,7 +87,7 @@
                     <?php }else echo "<br>";  ?>
                 </div>
             </div>
-        <?php } ?>
+        <?php } }?>
     </div>
     <?php echo $footer ?>
 </body>
