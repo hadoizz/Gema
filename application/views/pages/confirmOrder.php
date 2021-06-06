@@ -82,14 +82,19 @@
 
             var checkout = document.getElementById('checkoutBtn');
             if (hari > 0) {
-                if(hari>=30){
-                    document.getElementById('equal').innerHTML = "Maximum 30 days " ;
-                    checkout.classList.add('disabled')
+                if(hari % 1 == 0){
+                    if(hari>=30){
+                        document.getElementById('equal').innerHTML = "Maximum 30 days " ;
+                        checkout.classList.add('disabled')
+                    }else{
+                        var hasil = (total * hari).toLocaleString();
+                        document.getElementById('equal').innerHTML = "= IDR " + hasil;
+                        checkout.classList.remove('disabled')
+                        document.getElementById('inputDay').value = hari
+                    }
                 }else{
-                    var hasil = (total * hari).toLocaleString();
-                    document.getElementById('equal').innerHTML = "= IDR " + hasil;
-                    checkout.classList.remove('disabled')
-                    document.getElementById('inputDay').value = hari
+                    document.getElementById('equal').innerHTML = "Float number not allowed";
+                    checkout.classList.add('disabled')
                 }
             } else if (hari < 0) {
                 document.getElementById('equal').innerHTML = "= IDR 0";
