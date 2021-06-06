@@ -1,8 +1,8 @@
 <?php foreach($games as $item){ ?>
 <div class="eight wide mobile four wide tablet three wide computer stackable column left aligned"  style="margin-bottom: 10px;">
     <div class="row">
-        <div class="ui fluid rounded image">
-            <img id="poster" src="<?= base_url('assets/uploads/poster/'.$item['Gambar']) ?>">
+        <div class="ui fluid rounded image" style="height: 265px">
+            <img id="poster" style="width: 100%; height: 100%; object-fit:cover; object-position: left top;" src="<?= base_url('assets/uploads/poster/'.$item['Gambar']) ?>">
         </div>
     </div>
     <br>
