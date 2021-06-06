@@ -18,11 +18,13 @@
     </style>
 </head>
 
-<body>
+<body style="height: 100%;">
     <?= $nav ?>
     <div class="ui container" id="main" style="margin-bottom: 50px;">
         <?php if(count($orders) == 0){?>
-            <h1>Nothing found in your history</h1>
+            <div style="height:200px; margin-top:60px">
+            <h1>Belum ada barang yang kamu pesan nihh, yukk pesan dulu... <span> <a href="<?php echo base_url()?>">go to home</a></span></h1>
+            </div>
         <?php }else{
         foreach ($orders as $order) {
             $total = 0;
